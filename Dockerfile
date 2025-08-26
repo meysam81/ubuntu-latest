@@ -17,7 +17,7 @@ RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | \
   fonts-liberation \
   google-chrome-stable \
   libappindicator3-1 \
-  libasound2 \
+  libasound2t64 \
   libatk-bridge2.0-0 \
   libgtk-3-0 \
   libnspr4 \
