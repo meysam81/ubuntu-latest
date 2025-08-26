@@ -1,13 +1,14 @@
 FROM ubuntu:latest
 
+ENV DEBIAN_FRONTEND=noninteractive
+
 RUN apt-get update && apt-get install -y \
   wget \
   gnupg \
   ca-certificates \
   curl \
-  unzip
-
-RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | \
+  unzip \
+  wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | \
   gpg --dearmor | \
   tee /usr/share/keyrings/google-chrome-keyring.gpg > /dev/null && \
   echo "deb [arch=amd64 signed-by=/usr/share/keyrings/google-chrome-keyring.gpg] http://dl.google.com/linux/chrome/deb/ stable main" | \
