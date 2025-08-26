@@ -13,8 +13,9 @@ RUN apt-get update && apt-get install -y \
   tee /usr/share/keyrings/google-chrome-keyring.gpg > /dev/null && \
   echo "deb [arch=amd64 signed-by=/usr/share/keyrings/google-chrome-keyring.gpg] http://dl.google.com/linux/chrome/deb/ stable main" | \
   tee /etc/apt/sources.list.d/google-chrome.list && \
-  curl -fsSL https://bun.sh/install | bash && \
-  apt-get update && apt-get install -y \
+  curl -fsSL https://bun.sh/install | bash
+
+RUN apt-get update && apt-get install -y \
   fonts-liberation \
   google-chrome-stable \
   libappindicator3-1 \
