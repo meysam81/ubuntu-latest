@@ -14,7 +14,9 @@ RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | \
   curl -fsSL https://bun.sh/install | bash && \
   apt-get update && apt-get install -y \
   fonts-liberation \
+  google-chrome-stable \
   libappindicator3-1 \
+  libasound2 \
   libatk-bridge2.0-0 \
   libgtk-3-0 \
   libnspr4 \
@@ -23,6 +25,5 @@ RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | \
   libxss1 \
   libxtst6 \
   xdg-utils \
-  google-chrome-stable \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
