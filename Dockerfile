@@ -3,11 +3,12 @@ FROM ubuntu:latest
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y \
-  wget \
-  gnupg \
   ca-certificates \
   curl \
-  unzip
+  gnupg \
+  jq \
+  unzip \
+  wget
 
 RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | \
   gpg --dearmor -o /usr/share/keyrings/google-chrome-keyring.gpg && \
