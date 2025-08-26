@@ -4,7 +4,8 @@ RUN apt-get update && apt-get install -y \
   wget \
   gnupg \
   ca-certificates \
-  curl
+  curl \
+  unzip
 
 RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | \
   gpg --dearmor | \
