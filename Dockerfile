@@ -16,6 +16,11 @@ RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | \
   echo "deb [arch=amd64 signed-by=/usr/share/keyrings/google-chrome-keyring.gpg] http://dl.google.com/linux/chrome/deb/ stable main" | \
   tee /etc/apt/sources.list.d/google-chrome.list
 
+RUN echo 'deb [trusted=yes] https://repo.goreleaser.com/apt/ /' | tee /etc/apt/sources.list.d/goreleaser.list && \
+  apt update && \
+  apt install -y goreleaser && \
+  goreleaser --version
+
 RUN curl -fsSL https://bun.sh/install | bash
 
 RUN apt-get update && apt-get install -y \
